@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #224941 url('https://cdn.glitch.com/0a4f70fc-e290-4b34-a072-10489b9901f3%2Fpexels-james-wheeler-1542493.jpg?v=1601320299414') no-repeat center center/cover;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+  position: relative;
+  transform: scale(1);
+}
+
+
+
+.typewriter{
+  text-shadow:2px 2px 5px darkgreen;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+/*   border-right: .15em solid orange; The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 1.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 10% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.circle {
+  background-color: #010f1c;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.gradient-circle {
+  background: conic-gradient(
+    #55b7a4 0%,
+    #4ca493 40%,
+    #fff 40%,
+    #fff 60%,
+    #336d62 60%,
+    #2a5b52 100%
+  );
+  height: 320px;
+  width: 320px;
+  z-index: -2;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.pointer {
+  background-color: #fff;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  display: block;
+}
+
+.pointer-container {
+  position: absolute;
+  top: -40px;
+  left: 140px;
+  width: 20px;
+  height: 190px;
+  animation: rotate 7.5s linear forwards infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container.grow {
+  animation: grow 3s linear forwards;
+}
+
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.container.shrink {
+  animation: shrink 3s linear forwards;
+}
+
+@keyframes shrink {
+  from {
+    transform: scale(1.2);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
